@@ -53,6 +53,7 @@ int main(int argc, char **argv)
 	wEntry_t *audio = Wad_FindEntry(footer, "AUDIOREC", NULL, false);
 	if (!audio) {
 		printf("audiorec lump isn't in demo\n");
+		remove("demoexfooter.wad");
 		exit(1);
 	}
 	Wad_DeleteEntry(footer, audio);
